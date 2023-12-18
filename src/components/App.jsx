@@ -36,21 +36,21 @@ export class App extends Component {
   };
 
   render() {
-    const { good, neutral, bad } = this.state;
     const total = this.getTotal();
 
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions handleCountIncrease={this.handleCountIncrease} />
+          <FeedbackOptions
+            handleCountIncrease={this.handleCountIncrease}
+            options={Object.keys(this.state)}
+          />
         </Section>
 
         <Section title="Statistics">
           {total ? (
             <Statistics
-              good={good}
-              neutral={neutral}
-              bad={bad}
+              {...this.state}
               total={total}
               positivePercentage={this.getPositivePercentage()}
             />

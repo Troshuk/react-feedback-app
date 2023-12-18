@@ -1,17 +1,18 @@
 import css from './FeedbackOptions.module.css';
 
-const FeedbackOptions = ({ handleCountIncrease }) => {
+const FeedbackOptions = ({ options, handleCountIncrease }) => {
   return (
     <div className={css.feedback}>
-      <button type="button" onClick={handleCountIncrease} data-type="good">
-        Good
-      </button>
-      <button type="button" onClick={handleCountIncrease} data-type="neutral">
-        Neutral
-      </button>
-      <button type="button" onClick={handleCountIncrease} data-type="bad">
-        Bad
-      </button>
+      {options.map(option => (
+        <button
+          key={option}
+          type="button"
+          data-type={option}
+          onClick={handleCountIncrease}
+        >
+          {option}
+        </button>
+      ))}
     </div>
   );
 };
