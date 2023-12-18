@@ -1,0 +1,9 @@
+.statisticsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.statisticsContainer div span {
+    font-weight: bold;
+}
