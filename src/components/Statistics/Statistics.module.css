@@ -4,6 +4,10 @@
     gap: 10px;
 }
 
+.statisticsContainer {
+    text-transform: capitalize;
+}
+
 .statisticsContainer div span {
     font-weight: bold;
 }

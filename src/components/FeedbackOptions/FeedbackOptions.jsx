@@ -7,8 +7,7 @@ const FeedbackOptions = ({ options, handleCountIncrease }) => {
         <button
           key={option}
           type="button"
-          data-type={option}
-          onClick={handleCountIncrease}
+          onClick={() => handleCountIncrease(option)}
         >
           {option}
         </button>

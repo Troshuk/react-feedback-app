@@ -1,22 +1,15 @@
 import css from './Statistics.module.css';
 
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
+const Statistics = ({ options, positivePercentage }) => {
   return (
     <div className={css.statisticsContainer}>
+      {Object.entries(options)?.map(([name, value]) => (
+        <div key={name}>
+          {name}: <span>{value}</span>
+        </div>
+      ))}
       <div>
-        Good: <span>{good}</span>
-      </div>
-      <div>
-        Neutral: <span>{neutral}</span>
-      </div>
-      <div>
-        Bad: <span>{bad}</span>
-      </div>
-      <div>
-        Total: <span>{total}</span>
-      </div>
-      <div>
-        Positive feedback: <span>{positivePercentage.toFixed()}%</span>
+        Positive feedback: <span>{positivePercentage?.toFixed()}%</span>
       </div>
     </div>
   );
