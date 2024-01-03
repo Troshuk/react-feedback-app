@@ -1,6 +1,6 @@
 import css from './FeedbackOptions.module.css';
 
-const FeedbackOptions = ({ options, handleCountIncrease }) => {
+export const FeedbackOptions = ({ options, handleCountIncrease }) => {
   return (
     <div className={css.feedback}>
       {options.map(option => (
@@ -15,5 +15,3 @@ const FeedbackOptions = ({ options, handleCountIncrease }) => {
     </div>
   );
 };
-
-export { FeedbackOptions };

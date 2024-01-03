@@ -1,6 +1,6 @@
 import css from './Statistics.module.css';
 
-const Statistics = ({ options, positivePercentage }) => {
+export const Statistics = ({ options, positivePercentage }) => {
   return (
     <div className={css.statisticsContainer}>
       {Object.entries(options)?.map(([name, value]) => (
@@ -14,5 +14,3 @@ const Statistics = ({ options, positivePercentage }) => {
     </div>
   );
 };
-
-export { Statistics };
