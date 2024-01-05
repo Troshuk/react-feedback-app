@@ -11,9 +11,9 @@ export const App = () => {
 
   const optionsMap = { good: setGood, neutral: setNeutral, bad: setBad };
   const total = good + neutral + bad;
+  const positiveFeedback = (total && (good / total) * 100).toFixed() + '%';
 
   const handleCountIncrease = option => optionsMap[option](value => value + 1);
-  const getPositivePercentage = () => total && (good / total) * 100;
 
   return (
     <div>
@@ -27,9 +27,7 @@ export const App = () => {
       <Section title="Statistics">
         {total ? (
           <Statistics
-            options={{ good, neutral, bad }}
-            total={total}
-            positivePercentage={getPositivePercentage()}
+            options={{ good, neutral, bad, total, positiveFeedback }}
           />
         ) : (
           <Notification message="There is no feedback" />
